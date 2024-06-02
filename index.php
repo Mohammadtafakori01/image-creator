@@ -11,10 +11,10 @@ $bot = new TelegramBot();
 $commandHandler = new CommandHandler($dbPath);
 $command = $commandHandler->readAndUpdateCommand();
 $text = $command['example'];
-$caption = `command: {$command['command']} in linux,
+$caption = "command: {$command['command']} in linux,
 when use it? {$command['case_of_use']}.  
 {$command['description']}
-which options?  {$command['options']}`;
+which options?  {$command['options']}";
 $image = new CmdImage();
 $image->createImageObject(1080, 1080);
 $image->createBackgroundRandomLight();

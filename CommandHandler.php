@@ -12,7 +12,7 @@ class CommandHandler {
 
     public function readAndUpdateCommand() {
         // Select one record where used is 0
-        $result = $this->db->querySingle('SELECT * FROM commands WHERE used = 1 LIMIT 1', true);
+        $result = $this->db->querySingle('SELECT * FROM commands WHERE used = 0 LIMIT 1', true);
 
         if ($result) {
             // Update the used status to 1
