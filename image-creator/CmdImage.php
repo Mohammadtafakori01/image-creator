@@ -151,7 +151,7 @@ class CmdImage implements ImageCreatorInterface
                     break;
             }
         } else {
-            header('Content-Type: image/' . $type);
+            // header('Content-Type: image/' . $type);
             switch ($type) {
                 case 'jpeg':
                     imagejpeg($this->image);

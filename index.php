@@ -1,13 +1,23 @@
 <?php
-require 'CmdImage.php';
+require 'image-creator/CmdImage.php';
+require 'CommandHandler.php';
+require 'TelegramBot.php';
 
-$text = "sudo makefile to use";
+$dbPath = 'commands.db';
 
+// Usage example
+$bot = new TelegramBot();
+// Create an instance of the CommandHandler class
+$commandHandler = new CommandHandler($dbPath);
+$command = $commandHandler->readAndUpdateCommand();
+$text = $command['example'];
 $image = new CmdImage();
 $image->createImageObject(1080, 1080);
 $image->createBackgroundRandomLight();
 $image->addBackground('./linux.jpg', 50);
-$image->addText($text, 50, 'C:\Windows\Fonts\arial.ttf', [0, 200, 0], [0, 0, 0, 63], 20);
+$image->addText($text, 60, './times new roman.ttf', [0, 200, 0], [0, 0, 0, 63], 20);
 $image->addSticker('./sticker.png');
-$image->returnImage('jpeg');
+$img = $image->returnImage('jpeg');
+
+$bot->send($command['example'], './sticker.png');
 ?>
