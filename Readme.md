@@ -1,6 +1,6 @@
-# CmdImage
+# ImageCreator
 
-CmdImage is a PHP class that allows you to create and manipulate images. This class can create images, add backgrounds, text, and stickers, and then output the final image in various formats.
+ImageCreator is a PHP class that allows you to create and manipulate images. This class can create images, add backgrounds, text, and stickers, and then output the final image in various formats.
 
 ## Requirements
 
