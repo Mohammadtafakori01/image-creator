@@ -163,7 +163,7 @@ class CmdImage implements ImageCreatorInterface
                     imagegif($this->image);
                     break;
             }
-            move("./img.png", imagejpeg($this->image));
+            
         }
         imagedestroy($this->image);
     }
