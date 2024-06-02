@@ -17,7 +17,7 @@ $image->createBackgroundRandomLight();
 $image->addBackground('./linux.jpg', 50);
 $image->addText($text, 60, './times new roman.ttf', [0, 200, 0], [0, 0, 0, 63], 20);
 $image->addSticker('./sticker.png');
-$img = $image->returnImage('jpeg');
+$img = $image->returnImage('jpeg', './image.jpg');
 
-$bot->send($command['example'], './sticker.png');
+$bot->send($command['example'], './image.jpg');
 ?>

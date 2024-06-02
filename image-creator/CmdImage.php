@@ -151,7 +151,7 @@ class CmdImage implements ImageCreatorInterface
                     break;
             }
         } else {
-            // header('Content-Type: image/' . $type);
+            header('Content-Type: image/' . $type);
             switch ($type) {
                 case 'jpeg':
                     imagejpeg($this->image);
@@ -163,6 +163,7 @@ class CmdImage implements ImageCreatorInterface
                     imagegif($this->image);
                     break;
             }
+            move("./img.png", imagejpeg($this->image));
         }
         imagedestroy($this->image);
     }
